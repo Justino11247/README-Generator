@@ -17,6 +17,7 @@ To use this application, you must clone the repository and run npm install on th
 
 ## Usage
 to use this application you must run the command node index.js in the terminal. You will be asked a series of question that will allow the generator to fill your README with all your desired information.
+<a href="https://drive.google.com/file/d/1jxmQEm5C5y4rSh3BaEzPmfh-9X8repvS/view?usp=sharing">Link to walkthrough video
 <img src="./images/Screenshot 2024-08-26 180016.png" alt="screenshot of application">
 
 ## Contributions
