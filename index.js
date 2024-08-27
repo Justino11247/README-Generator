@@ -30,17 +30,17 @@ const questions = [
   {
     type: 'list',
     message: ('What License was used?'),
-    name: 'licence',
-    choices: ["", "", "", "", "", "", "",]
+    name: 'license',
+    choices: ["Apache License 2.0", "GNU General Public License v3.0", "MIT", "BSD 2-Clause ", "BSD 3-Clause", "Boost Software License 1.0", "No License",]
   },
   {
     type: 'input',
-    message: ('Were there any other contributors on this application?'),
+    message: ('How can someone contribute to this project?'),
     name: 'contributions',
   },
   {
     type: 'input',
-    message: ('Are there any testing guidlines of this application?'),
+    message: ('Are there any testing guidlines for this application?'),
     name: 'test',
   },
   {
@@ -56,10 +56,20 @@ const questions = [
 ];
 
 // TODO: Create a function to write README file
-
+function writeToFile(fileName, data) {
+  writeFile(fileName, generateMarkdown(data));
+}
 
 // TODO: Create a function to initialize app
-
+function init() {
+  inquirer.prompt(questions)
+    .then((data) => 
+      writeToFile('generateREADME.md', data))
+    .then(() => 
+      console.log('README.md file has been created!'))
+    .catch((err) => 
+      console.log(err));
+}
 
 // Function call to initialize app
 init();
